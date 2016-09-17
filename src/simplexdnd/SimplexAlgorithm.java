@@ -564,7 +564,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             panel.remove(jScrollPane);
             display=new JPanel();
             jScrollPane=new JScrollPane();
-
+//test
             jScrollPane.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
 
             display.setBackground(new java.awt.Color(255, 255, 255));
