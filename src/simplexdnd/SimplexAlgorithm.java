@@ -385,36 +385,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     }
     
     public void display(float[][] matrix){
-        /*
-        String text=new String();
-        String sample=new String();
-        sample=""+dec.format(matrix[0][0]);
-        int longest=sample.length();
-        for(int column=0;column<MAXCOLUMN;column++){
-            for(int row=0;row<MAXROW;row++){
-                sample=""+dec.format(matrix[column][row]);
-                if(longest<sample.length()){
-                    longest=sample.length();
-                }
-            }
-        }        
-        for(int column=0;column<MAXCOLUMN;column++){
-            jTextArea.append("| ");
-            for(int row=0;row<MAXROW;row++){
-                sample=""+dec.format(matrix[column][row]);
-                if(row==0){
-                    text=String.format("%1$"+(20+longest-sample.length())+ "s", dec.format(matrix[column][row])+" |");
-                    jTextArea.append(text);
-                }else{
-                    text=String.format("%1$"+(20+longest-sample.length())+ "s", dec.format(matrix[column][row])+" ");
-                    jTextArea.append(text);
-                }
-            }
-            text=" |";
-            jTextArea.append(text+"\n");
-        } 
-        jTextArea.append("\n");
-        */
+       
         /*Add tableaus*/
         DecimalFormat dec=new DecimalFormat("0.00");
         JPanel tableaus=new JPanel();
