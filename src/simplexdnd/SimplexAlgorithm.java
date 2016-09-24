@@ -181,7 +181,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
             jSolution.setVisible(true);
             panel.remove(jLabel4);
-          //  jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplexdnd/background.png"))); // NOI18N
+          
             panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
             getContentPane().setVisible(false);
             getContentPane().setVisible(true);
@@ -227,7 +227,6 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
 
         panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 500, 440));
         panel.remove(jLabel4);
-        //jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplexdnd/background.png"))); // NOI18N
         panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
         
         getContentPane().setVisible(false);
