@@ -181,7 +181,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
             jSolution.setVisible(true);
             panel.remove(jLabel4);
-          //  jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplexdnd/background.png"))); // NOI18N
+          
             panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
             getContentPane().setVisible(false);
             getContentPane().setVisible(true);
@@ -227,7 +227,6 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
 
         panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 500, 440));
         panel.remove(jLabel4);
-        //jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplexdnd/background.png"))); // NOI18N
         panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
         
         getContentPane().setVisible(false);
@@ -643,12 +642,41 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Done.");
         }else{
+            SubProblem(matrix);
             JOptionPane.showMessageDialog(null, "The tableau is not in canonical form.");
         }
         jScrollPane.setVisible(false);
         jScrollPane.setVisible(true);
         display.setVisible(false);
         display.setVisible(true);
+    }
+    
+    public void SubProblem(float matrix[][]){
+        //matrix[column][row]
+        int[] swapIndex=new int[MAXCOLUMN];
+        for(int i=0;i<MAXCOLUMN;i++){
+            swapIndex[i]=i;
+        }
+        SwapRows(swapIndex,matrix);
+    }
+    
+    private void SwapRows(int swapIndex[],float matrix[][]){
+        float[] tempMatrix=new float[MAXROW];
+        int tempSwapIndex;
+        for(int mainInd=1;mainInd<MAXCOLUMN;mainInd++){        
+            for(int x=mainInd+1;x<MAXCOLUMN;x++){
+                if(matrix[x][0]<0 && matrix[x][0]<matrix[mainInd][0]){
+                    for(int column=0 ;column<MAXROW;column++){
+                        tempMatrix[column]=matrix[mainInd][column];
+                        matrix[mainInd][column]=matrix[x][column];
+                        matrix[x][column]=tempMatrix[column];   
+                    }
+                    tempSwapIndex=swapIndex[mainInd];
+                    swapIndex[mainInd]=swapIndex[x];
+                    swapIndex[x]=tempSwapIndex;
+                }
+            }
+        }
     }
     /**
      * @param args the command line arguments
