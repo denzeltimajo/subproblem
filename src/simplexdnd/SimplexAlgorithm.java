@@ -642,7 +642,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Done.");
         }else{
-            subProblem(matrix);
+            SubProblem(matrix);
             JOptionPane.showMessageDialog(null, "The tableau is not in canonical form.");
         }
         jScrollPane.setVisible(false);
@@ -651,8 +651,32 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         display.setVisible(true);
     }
     
-    public void subProblem(float matrix[][]){
-        
+    public void SubProblem(float matrix[][]){
+        //matrix[column][row]
+        int[] swapIndex=new int[MAXCOLUMN];
+        for(int i=0;i<MAXCOLUMN;i++){
+            swapIndex[i]=i;
+        }
+        SwapRows(swapIndex,matrix);
+    }
+    
+    private void SwapRows(int swapIndex[],float matrix[][]){
+        float[] tempMatrix=new float[MAXROW];
+        int tempSwapIndex;
+        for(int mainInd=1;mainInd<MAXCOLUMN;mainInd++){        
+            for(int x=mainInd+1;x<MAXCOLUMN;x++){
+                if(matrix[x][0]<0 && matrix[x][0]<matrix[mainInd][0]){
+                    for(int column=0 ;column<MAXROW;column++){
+                        tempMatrix[column]=matrix[mainInd][column];
+                        matrix[mainInd][column]=matrix[x][column];
+                        matrix[x][column]=tempMatrix[column];   
+                    }
+                    tempSwapIndex=swapIndex[mainInd];
+                    swapIndex[mainInd]=swapIndex[x];
+                    swapIndex[x]=tempSwapIndex;
+                }
+            }
+        }
     }
     /**
      * @param args the command line arguments
