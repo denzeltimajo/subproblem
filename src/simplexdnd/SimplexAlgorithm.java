@@ -642,12 +642,17 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Done.");
         }else{
+            subProblem(matrix);
             JOptionPane.showMessageDialog(null, "The tableau is not in canonical form.");
         }
         jScrollPane.setVisible(false);
         jScrollPane.setVisible(true);
         display.setVisible(false);
         display.setVisible(true);
+    }
+    
+    public void subProblem(float matrix[][]){
+        
     }
     /**
      * @param args the command line arguments
