@@ -659,36 +659,44 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     }
     
     private void SwapRows(float m[][]){
-        /*float[] tempMatrix=new float[MAXROW];
-        int tempSwapIndex;
-        for(int mainInd=1;mainInd<MAXCOLUMN;mainInd++){        
-            for(int x=mainInd+1;x<MAXCOLUMN;x++){
-                if(matrix[x][0]<0 && matrix[x][0]<matrix[mainInd][0]){
-                    for(int column=0 ;column<MAXROW;column++){
-                        tempMatrix[column]=matrix[mainInd][column];
-                        matrix[mainInd][column]=matrix[x][column];
-                        matrix[x][column]=tempMatrix[column];   
-                    }
-                    tempSwapIndex=swapIndex[mainInd];
-                    swapIndex[mainInd]=swapIndex[x];
-                    swapIndex[x]=tempSwapIndex;
-                }
+        float[][] mex =new float[MAXCOLUMN][MAXROW];
+        int c=0;
+        int p=0;
+        
+        Stack positiveInt= new Stack();
+        for(int column=0 ;column<MAXCOLUMN;column++){
+            if(0<m[column][0] && column>0){
+                positiveInt.add(m[column]); 
+                p++;
+            }else{
+                mex[c]=m[column]; 
+                c++;
             }
-        }*/
-        float[][] temp =new float[MAXCOLUMN][MAXROW];
-        float[] shortTemp =new float[MAXROW];
-
-        Stack nigger= new Stack();
-        Stack xgon= new Stack();
-        for(int column=0 ;column<MAXROW;column++){
-            nigger.add(m[column]); 
         }        
-        shortTemp=(float[])nigger.get(1);
         
-
+        int minindex,i,j;
+        float tempf;
+        for(i=1;i<c-1;i++){
+            minindex=i;
+            for(j=i+1;j<c;j++){
+                
+            if(mex[minindex][0]>mex[j][0]){
+                minindex =j;
+            if(minindex!=i){
+                tempf=mex[i][0];
+                mex[i][0]=m[minindex][0];
+                mex[minindex][0]=tempf;
+            }
+            }
+                
+            }
+            
+        }
         
-        for(int column=MAXROW-1 ;column>=0;column--){
-            temp[column]=(float[])nigger.pop(); 
+        c=MAXCOLUMN-1;
+        for(int column=p ;column>0;column--){
+            mex[c]=(float[])positiveInt.pop();
+            c--;
         }      
     }
     /**
