@@ -653,15 +653,12 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     
     public void SubProblem(float matrix[][]){
         //matrix[column][row]
-        int[] swapIndex=new int[MAXCOLUMN];
-        for(int i=0;i<MAXCOLUMN;i++){
-            swapIndex[i]=i;
-        }
-        SwapRows(swapIndex,matrix);
+
+        SwapRows(matrix);
     }
     
-    private void SwapRows(int swapIndex[],float matrix[][]){
-        float[] tempMatrix=new float[MAXROW];
+    private void SwapRows(float m[][]){
+        /*float[] tempMatrix=new float[MAXROW];
         int tempSwapIndex;
         for(int mainInd=1;mainInd<MAXCOLUMN;mainInd++){        
             for(int x=mainInd+1;x<MAXCOLUMN;x++){
@@ -676,6 +673,24 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                     swapIndex[x]=tempSwapIndex;
                 }
             }
+        }*/
+        int minindex,i,j;
+        float temp;
+        for(i=1;i<MAXCOLUMN;i++){
+            minindex=i;
+            for(j=i+1;j<=MAXCOLUMN;j++){
+                
+            if(m[minindex][0]>m[j][0]){
+                minindex =j;
+            if(minindex!=i){
+                temp=m[i][0];
+                m[i][0]=m[minindex][0];
+                m[minindex][0]=temp;
+            }
+            }
+                
+            }
+            
         }
     }
     /**
