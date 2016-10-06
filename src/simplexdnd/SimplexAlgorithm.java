@@ -655,10 +655,10 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     public void SubProblem(float matrix[][]){
         //matrix[column][row]
 
-        SwapRows(matrix);
+        matrix=SwapRows(matrix);
     }
     
-    private void SwapRows(float m[][]){
+    private float[][] SwapRows(float m[][]){
         float[][] mex =new float[MAXCOLUMN][MAXROW];
         int c=0;
         int p=0;
@@ -675,29 +675,27 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         }        
         
         int minindex,i,j;
-        float tempf;
+        float[] tempf;
         for(i=1;i<c-1;i++){
             minindex=i;
-            for(j=i+1;j<c;j++){
-                
-            if(mex[minindex][0]>mex[j][0]){
-                minindex =j;
-            if(minindex!=i){
-                tempf=mex[i][0];
-                mex[i][0]=m[minindex][0];
-                mex[minindex][0]=tempf;
-            }
-            }
-                
+            for(j=i+1;j<c;j++){      
+                if(mex[minindex][0]>mex[j][0]){
+                    minindex =j;
+                    if(minindex!=i){
+                        tempf=mex[i];
+                        mex[i]=m[minindex];
+                        mex[minindex]=tempf;
+                    }
+                }
             }
             
         }
-        
         c=MAXCOLUMN-1;
         for(int column=p ;column>0;column--){
             mex[c]=(float[])positiveInt.pop();
             c--;
-        }      
+        }
+        return mex;
     }
     /**
      * @param args the command line arguments
