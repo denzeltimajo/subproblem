@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+import java.util.Stack;
 /**
  *
  * @author aris
@@ -674,24 +675,21 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                 }
             }
         }*/
-        int minindex,i,j;
-        float temp;
-        for(i=1;i<MAXCOLUMN;i++){
-            minindex=i;
-            for(j=i+1;j<=MAXCOLUMN;j++){
-                
-            if(m[minindex][0]>m[j][0]){
-                minindex =j;
-            if(minindex!=i){
-                temp=m[i][0];
-                m[i][0]=m[minindex][0];
-                m[minindex][0]=temp;
-            }
-            }
-                
-            }
-            
-        }
+        float[][] temp =new float[MAXCOLUMN][MAXROW];
+        float[] shortTemp =new float[MAXROW];
+
+        Stack nigger= new Stack();
+        Stack xgon= new Stack();
+        for(int column=0 ;column<MAXROW;column++){
+            nigger.add(m[column]); 
+        }        
+        shortTemp=(float[])nigger.get(1);
+        
+
+        
+        for(int column=MAXROW-1 ;column>=0;column--){
+            temp[column]=(float[])nigger.pop(); 
+        }      
     }
     /**
      * @param args the command line arguments
