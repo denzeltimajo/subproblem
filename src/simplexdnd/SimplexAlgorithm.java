@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import java.util.Stack;
 /**
  *
- * @author aris
+ * @author denzel
  */
 public class SimplexAlgorithm extends javax.swing.JFrame {
     private JTextField[][] jMatrix;
