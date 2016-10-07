@@ -152,8 +152,14 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
         }
         //Initialize new matrix
-        
-        if(MAXROW>3 && MAXCOLUMN>1){
+        if(tmaxCt.getText().isEmpty() || tmaxBi.getText().isEmpty()){
+           JOptionPane.showMessageDialog(null,"Invalid input","ERROR",JOptionPane.ERROR_MESSAGE);
+            jSolution.setVisible(false);
+            MAXROW=MAXCOLUMN=0;
+            panel.setVisible(false);
+            panel.setVisible(true);
+       }
+        else if(Integer.parseInt(tmaxCt.getText())+1>3 && Integer.parseInt(tmaxBi.getText())+1>1){
             MAXROW=Integer.parseInt(tmaxCt.getText())+1;
         MAXCOLUMN=Integer.parseInt(tmaxBi.getText())+1;
             //MATRIX-make textfields
