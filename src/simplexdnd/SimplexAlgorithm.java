@@ -17,8 +17,13 @@ import javax.swing.JTextField;
 
 import java.util.Stack;
 /**
+<<<<<<< HEAD
  *
  * @author denzel
+=======
+ *NIGGERS
+ * @author aris
+>>>>>>> refs/remotes/origin/developer
  */
 public class SimplexAlgorithm extends javax.swing.JFrame {
     private JTextField[][] jMatrix;
@@ -657,17 +662,17 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         //matrix[column][row]
         //Step 1: Swap Rows
         matrix=SwapRows(matrix);
-        int c=0;
-        //float[][] matrix=new float[MAXCOLUMN][MAXROW];
-        //Step 2: Simplex
-        for(int x=1;x<MAXCOLUMN;x++){
-            if(matrix[0][x]<0){
-                c=x;
-            }
-        }
+        
         
         while(checkoptimal(matrix)==false){
-                
+                int c=0;
+                //float[][] matrix=new float[MAXCOLUMN][MAXROW];
+                //Step 2: Simplex
+                for(int x=1;x<MAXCOLUMN;x++){
+                    if(matrix[0][x]<0){
+                        c=x;
+                    }
+                }
                 /*Finding the pivot index*/
                 /*Step 1: Finding the most negative lowest index*/
                 float mostNegative=matrix[c][1];
@@ -728,6 +733,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                     displayFA(matrix);
                     break;
                 }
+                
             }
     }
     
