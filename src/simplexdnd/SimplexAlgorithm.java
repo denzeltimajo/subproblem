@@ -157,10 +157,10 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             }
         }
         //Initialize new matrix
-        MAXROW=Integer.parseInt(tmaxCt.getText())+1;
-        MAXCOLUMN=Integer.parseInt(tmaxBi.getText())+1;
+        
         if(MAXROW>3 && MAXCOLUMN>1){
-            
+            MAXROW=Integer.parseInt(tmaxCt.getText())+1;
+        MAXCOLUMN=Integer.parseInt(tmaxBi.getText())+1;
             //MATRIX-make textfields
             jPanel.setLayout(new java.awt.GridLayout(MAXCOLUMN, MAXROW));
             jMatrix=new JTextField[MAXCOLUMN][MAXROW];
