@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 
 import java.util.Stack;
 /**
- *
+ *NIGGERS
  * @author aris
  */
 public class SimplexAlgorithm extends javax.swing.JFrame {
