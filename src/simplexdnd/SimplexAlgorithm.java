@@ -624,7 +624,6 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                         }
                     }
                 }
-                //ian
                 display(matrix);
                 if(checkcanonical(matrix)==true && checkoptimal(matrix)==true){
                     JOptionPane.showMessageDialog(null, "The tableau is optimal.");
