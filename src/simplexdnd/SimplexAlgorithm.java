@@ -655,11 +655,83 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     
     public void SubProblem(float matrix[][]){
         //matrix[column][row]
-
-        SwapRows(matrix);
+        //Step 1: Swap Rows
+        matrix=SwapRows(matrix);
+        int c=0;
+        //float[][] matrix=new float[MAXCOLUMN][MAXROW];
+        //Step 2: Simplex
+        for(int x=1;x<MAXCOLUMN;x++){
+            if(matrix[0][x]<0){
+                c=x;
+            }
+        }
+        
+        while(checkoptimal(matrix)==false){
+                
+                /*Finding the pivot index*/
+                /*Step 1: Finding the most negative lowest index*/
+                float mostNegative=matrix[c][1];
+                int pivotrow=1;
+                for(int row=2;row<MAXROW;row++){
+                    if(matrix[c][row]<mostNegative){
+                        mostNegative=matrix[c][row];
+                        pivotrow=row;
+                    }
+                }
+                /*Step 2: Finding the lowest positive ratio*/
+                int pivotcolumn=c+1;
+                int tempcolumn=c+1;
+                float lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
+                while(lowestRatio<=0){
+                    tempcolumn++;
+                    pivotcolumn++;
+                    lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
+                }
+                for(int column=tempcolumn+1;column<MAXCOLUMN;column++){
+                    if(matrix[column][0]/matrix[column][pivotrow]<lowestRatio && matrix[column][pivotrow]>0){
+                        lowestRatio=matrix[column][0]/matrix[column][pivotrow];
+                        pivotcolumn=column;
+                    }
+                }
+                displaydivide(matrix, pivotcolumn, pivotrow);
+                display(matrix,pivotcolumn,pivotrow);
+                /*Step 3: Divide row by pivot*/
+                float divider=matrix[pivotcolumn][pivotrow];
+                for(int row=0;row<MAXROW;row++){
+                    matrix[pivotcolumn][row]=matrix[pivotcolumn][row]/divider;
+                }
+                displaysubtract(matrix, pivotcolumn, pivotrow);
+                display(matrix);
+                
+                /*Step 4: Sweep*/
+                for(int column=0;column<MAXCOLUMN;column++){
+                    if(pivotcolumn!=column){
+                        float var=-matrix[column][pivotrow];
+                        for(int row=0;row<MAXROW;row++){
+                            matrix[column][row]=matrix[column][row]+(var*matrix[pivotcolumn][row]);
+                        }
+                    }
+                }
+                display(matrix);
+                if(checkcanonical(matrix)==true && checkoptimal(matrix)==true){
+                    JOptionPane.showMessageDialog(null, "The tableau is optimal.");
+                    displayFA(matrix);
+                    break;
+                }else if(checkinfeasibility1(matrix)==true){
+                    JOptionPane.showMessageDialog(null, "The tableau is infeasible.");
+                    break;
+                }else if(checkinfeasibility2(matrix)==true){
+                    JOptionPane.showMessageDialog(null, "The tableau is infeasible.");
+                    break;
+                }else if(checkcanonical(matrix) && checkunbounded(matrix)==true){
+                    JOptionPane.showMessageDialog(null, "The tableau is unbounded.");
+                    displayFA(matrix);
+                    break;
+                }
+            }
     }
     
-    private void SwapRows(float m[][]){
+    private float[][] SwapRows(float m[][]){
         float[][] mex =new float[MAXCOLUMN][MAXROW];
         int c=0;
         int p=0;
@@ -676,29 +748,27 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         }        
         
         int minindex,i,j;
-        float tempf;
+        float[] tempf;
         for(i=1;i<c-1;i++){
             minindex=i;
-            for(j=i+1;j<c;j++){
-                
-            if(mex[minindex][0]>mex[j][0]){
-                minindex =j;
-            if(minindex!=i){
-                tempf=mex[i][0];
-                mex[i][0]=m[minindex][0];
-                mex[minindex][0]=tempf;
-            }
-            }
-                
+            for(j=i+1;j<c;j++){      
+                if(mex[minindex][0]>mex[j][0]){
+                    minindex =j;
+                    if(minindex!=i){
+                        tempf=mex[i];
+                        mex[i]=m[minindex];
+                        mex[minindex]=tempf;
+                    }
+                }
             }
             
         }
-        
         c=MAXCOLUMN-1;
         for(int column=p ;column>0;column--){
             mex[c]=(float[])positiveInt.pop();
             c--;
-        }      
+        }
+        return mex;
     }
     /**
      * @param args the command line arguments
