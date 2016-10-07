@@ -17,13 +17,8 @@ import javax.swing.JTextField;
 
 import java.util.Stack;
 /**
-<<<<<<< HEAD
  *
  * @author denzel
-=======
- *NIGGERS
- * @author aris
->>>>>>> refs/remotes/origin/developer
  */
 public class SimplexAlgorithm extends javax.swing.JFrame {
     private JTextField[][] jMatrix;
@@ -763,7 +758,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                     minindex =j;
                     if(minindex!=i){
                         tempf=mex[i];
-                        mex[i]=m[minindex];
+                        mex[i]=mex[minindex];
                         mex[minindex]=tempf;
                     }
                 }
