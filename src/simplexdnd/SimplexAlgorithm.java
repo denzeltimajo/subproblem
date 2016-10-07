@@ -565,6 +565,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             displayFA(matrix);
         }else if(checkcanonical(matrix)==true){
             /*Initialize*/
+            
             panel.remove(display);
             panel.remove(jScrollPane);
             display=new JPanel();
@@ -650,7 +651,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Done.");
         }else{
             SubProblem(matrix);
-            JOptionPane.showMessageDialog(null, "The tableau is not in canonical form.");
+           JOptionPane.showMessageDialog(null, "The tableau is not in canonical form.");
         }
         jScrollPane.setVisible(false);
         jScrollPane.setVisible(true);
@@ -664,7 +665,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         matrix=SwapRows(matrix);
         
         
-        while(checkoptimal(matrix)==false){
+        while(checkoptimal(matrix)==false || checkcanonical(matrix)==false){
                 int c=0;
                 //float[][] matrix=new float[MAXCOLUMN][MAXROW];
                 //Step 2: Simplex
