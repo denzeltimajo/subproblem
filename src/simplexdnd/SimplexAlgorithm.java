@@ -763,7 +763,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                     minindex =j;
                     if(minindex!=i){
                         tempf=mex[i];
-                        mex[i]=m[minindex];
+                        mex[i]=mex[minindex];
                         mex[minindex]=tempf;
                     }
                 }
