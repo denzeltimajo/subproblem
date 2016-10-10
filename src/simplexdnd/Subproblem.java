@@ -700,7 +700,7 @@ public class Subproblem extends javax.swing.JFrame {
                         pivotrow=row;
                     }
                 }
-                /*Step 2: Finding the lowest positive ratio*/
+                /*Step 2: Finding the lowest positive ratiodd*/
                 int pivotcolumn=c+1;
                 int tempcolumn=c+1;
                 float lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
