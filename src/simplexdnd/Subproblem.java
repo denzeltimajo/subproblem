@@ -240,21 +240,6 @@ public class Subproblem extends javax.swing.JFrame {
         getContentPane().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
     
-    public void displayClear(){
-        panel.remove(display);
-
-        display=new JPanel();
-        display.setBackground(new java.awt.Color(153, 0, 0));
-        display.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-      
-        
-        getContentPane().setVisible(false);
-        getContentPane().setVisible(true);
-        
-        display.setVisible(false);
-        display.setVisible(true);
-    }
-    
     public boolean checkcanonical(float[][] matrix){
         String[] text=new String[MAXROW];
         String[] identity=new String[MAXCOLUMN-1];
@@ -700,7 +685,7 @@ public class Subproblem extends javax.swing.JFrame {
                         pivotrow=row;
                     }
                 }
-                /*Step 2: Finding the lowest positive ratiodd*/
+                /*Step 2: Finding the lowest positive ratio*/
                 int pivotcolumn=c+1;
                 int tempcolumn=c+1;
                 float lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
@@ -710,7 +695,7 @@ public class Subproblem extends javax.swing.JFrame {
                         pivotcolumn++;
                         lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
                     }else{
-                        JOptionPane.showMessageDialog(null, "Other methods are needed to solve this problem.");
+                        JOptionPane.showMessageDialog(null, "Other methooods are needed to solve this problem.");
                         break;
                     }
                 }
