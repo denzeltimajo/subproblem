@@ -705,9 +705,14 @@ public class Subproblem extends javax.swing.JFrame {
                 int tempcolumn=c+1;
                 float lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
                 while(lowestRatio<=0){
-                    tempcolumn++;
-                    pivotcolumn++;
-                    lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
+                    if(tempcolumn<MAXCOLUMN-1 || pivotcolumn<MAXCOLUMN-1){
+                        tempcolumn++;
+                        pivotcolumn++;
+                        lowestRatio=matrix[tempcolumn][0]/matrix[tempcolumn][pivotrow];
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Other methods are needed to solve this problem.");
+                        break;
+                    }
                 }
                 for(int column=tempcolumn+1;column<MAXCOLUMN;column++){
                     if(matrix[column][0]/matrix[column][pivotrow]<lowestRatio && matrix[column][pivotrow]>0){
