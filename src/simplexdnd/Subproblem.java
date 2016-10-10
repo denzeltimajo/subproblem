@@ -20,7 +20,7 @@ import java.util.Stack;
  *
  * @author denzel
  */
-public class SimplexAlgorithm extends javax.swing.JFrame {
+public class Subproblem extends javax.swing.JFrame {
     private JTextField[][] jMatrix;
     private JButton jSolution;
     int MAXROW=0;
@@ -32,7 +32,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     /**
      * Creates new form SimplexAlgorithm
      */
-    public SimplexAlgorithm() {
+    public Subproblem() {
         initComponents();
         initComponents2();
     }
@@ -815,20 +815,21 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SimplexAlgorithm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subproblem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SimplexAlgorithm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subproblem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SimplexAlgorithm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subproblem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SimplexAlgorithm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Subproblem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SimplexAlgorithm().setVisible(true);
+                new Subproblem().setVisible(true);
             }
         });
     }
