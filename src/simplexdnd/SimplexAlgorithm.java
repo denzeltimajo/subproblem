@@ -243,21 +243,16 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
     public void displayClear(){
         panel.remove(display);
 
-
         display=new JPanel();
-
-
-
-        
-  
-
-  
         display.setBackground(new java.awt.Color(153, 0, 0));
         display.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
       
         
         getContentPane().setVisible(false);
         getContentPane().setVisible(true);
+        
+        display.setVisible(false);
+        display.setVisible(true);
     }
     
     public boolean checkcanonical(float[][] matrix){
@@ -573,7 +568,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                 matrix[column][row]=Float.parseFloat(jMatrix[column][row].getText());   
             }
         }
-        displayClear();
+        //displayClear();
         if(checkcanonical(matrix)==true && checkoptimal(matrix)==true){
             JOptionPane.showMessageDialog(null, "The tableau is already in its optimal form.");
             displayFA(matrix);
