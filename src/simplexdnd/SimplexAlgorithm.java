@@ -44,18 +44,19 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     private void initComponents2(){
-        jSolution= new JButton();
-        jSolution.setBackground(new java.awt.Color(0, 0, 0));
+        jSolution= new javax.swing.JButton();
+        jSolution.setBackground(new java.awt.Color(204, 204, 204));
         jSolution.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jSolution.setForeground(new java.awt.Color(255, 255, 255));
-        jSolution.setText("Solution");
-        panel.add(jSolution, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
+        jSolution.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/111.jpg"))); // NOI18N
+        panel.add(jSolution, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 589, 170, 50));
         jSolution.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 SolutionActionPerformed(evt);
             }
         });
         jSolution.setVisible(false);
+     
+
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -82,59 +83,62 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setText("Enter no. of objective function:");
-        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 240, 20));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 240, 20));
 
         tmaxCt.setSelectionColor(new java.awt.Color(126, 0, 1));
-        panel.add(tmaxCt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 138, -1));
+        panel.add(tmaxCt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 180, 30));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setText("Enter no. of constants:");
-        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 210, 20));
+        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 210, 20));
 
         tmaxBi.setSelectionColor(new java.awt.Color(126, 0, 1));
-        panel.add(tmaxBi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 138, -1));
+        panel.add(tmaxBi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 180, 30));
 
         createTableau.setBackground(new java.awt.Color(204, 204, 204));
         createTableau.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         createTableau.setForeground(new java.awt.Color(51, 0, 51));
-        createTableau.setText("ENTER");
+        createTableau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/5.jpg"))); // NOI18N
         createTableau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createTableauActionPerformed(evt);
             }
         });
-        panel.add(createTableau, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 220, 70));
+        panel.add(createTableau, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 160, 80));
 
         scroller.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
 
-        jPanel.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Simplex Tableau"));
+        jPanel.setBackground(new java.awt.Color(153, 0, 0));
+        jPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
         jPanel.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jPanel.setLayout(new java.awt.GridLayout(1, 0));
         scroller.setViewportView(jPanel);
+        jPanel.getAccessibleContext().setAccessibleDescription("");
 
-        panel.add(scroller, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 390, 320));
+        panel.add(scroller, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 390, 290));
 
-        jScrollPane.setBorder(javax.swing.BorderFactory.createTitledBorder("Solution"));
+        jScrollPane.setBorder(null);
 
-        display.setBackground(new java.awt.Color(255, 255, 255));
-        display.setBorder(new javax.swing.border.MatteBorder(null));
+        display.setBackground(new java.awt.Color(153, 0, 0));
+        display.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
         display.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         display.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jScrollPane.setViewportView(display);
 
-        panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 500, 440));
+        panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 500, 390));
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jButton2.setText("CLEAR");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2.jpg"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        panel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 130, 30));
-        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 940, 530));
+        panel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 590, 170, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/8.jpg"))); // NOI18N
+        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 670));
 
         getContentPane().add(panel);
 
@@ -161,7 +165,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
        }
         else if(Integer.parseInt(tmaxCt.getText())+1>3 && Integer.parseInt(tmaxBi.getText())+1>1){
             MAXROW=Integer.parseInt(tmaxCt.getText())+1;
-        MAXCOLUMN=Integer.parseInt(tmaxBi.getText())+1;
+            MAXCOLUMN=Integer.parseInt(tmaxBi.getText())+1;
             //MATRIX-make textfields
             jPanel.setLayout(new java.awt.GridLayout(MAXCOLUMN, MAXROW));
             jMatrix=new JTextField[MAXCOLUMN][MAXROW];
@@ -189,7 +193,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
             jSolution.setVisible(true);
             panel.remove(jLabel4);
           
-            panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+            panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1011, 672));
             getContentPane().setVisible(false);
             getContentPane().setVisible(true);
         }else{
@@ -214,32 +218,48 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         jScrollPane=new JScrollPane();
         scroller=new JScrollPane();
         
-        scroller.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        scroller.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
 
-        jPanel.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Simplex Tableau"));
-        jPanel.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jPanel.setBackground(new java.awt.Color(153, 0, 0));
         jPanel.setLayout(new java.awt.GridLayout(1, 0));
         scroller.setViewportView(jPanel);
 
-        panel.add(scroller, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 390, 320));
+        panel.add(scroller, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 390, 290));
         
-        jScrollPane.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jScrollPane.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
 
-        display.setBackground(new java.awt.Color(255, 255, 255));
-        display.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        display.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        display.setBackground(new java.awt.Color(153, 0, 0));
         display.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jScrollPane.setViewportView(display);
 
-        panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 500, 440));
+        panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 500, 390));
         panel.remove(jLabel4);
-        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1011, 672));
         
         getContentPane().setVisible(false);
         getContentPane().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
-   
+    
+    public void displayClear(){
+        panel.remove(display);
+
+
+        display=new JPanel();
+
+
+
+        
+  
+
+  
+        display.setBackground(new java.awt.Color(153, 0, 0));
+        display.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+      
+        
+        getContentPane().setVisible(false);
+        getContentPane().setVisible(true);
+    }
+    
     public boolean checkcanonical(float[][] matrix){
         String[] text=new String[MAXROW];
         String[] identity=new String[MAXCOLUMN-1];
@@ -553,7 +573,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                 matrix[column][row]=Float.parseFloat(jMatrix[column][row].getText());   
             }
         }
-        
+        displayClear();
         if(checkcanonical(matrix)==true && checkoptimal(matrix)==true){
             JOptionPane.showMessageDialog(null, "The tableau is already in its optimal form.");
             displayFA(matrix);
@@ -574,15 +594,15 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
 
             jScrollPane.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
 
-            display.setBackground(new java.awt.Color(255, 255, 255));
+            display.setBackground(new java.awt.Color(153, 0, 0));
             display.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
             display.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
             display.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
             jScrollPane.setViewportView(display);
 
-            panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 500, 440));
+            panel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 500, 390));
             panel.remove(jLabel4);
-            panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 530));
+            panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1011, 672));
             MAXDISPLAY=0;
             /*Start solving*/
             while(checkoptimal(matrix)==false){
@@ -664,7 +684,7 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
         //matrix[column][row]
         //Step 1: Swap Rows
         matrix=SwapRows(matrix);
-        
+        float[][] mex =new float[MAXCOLUMN][MAXROW];
         display(matrix);
         while(checkoptimal(matrix)==false || checkcanonical(matrix)==false){
                 int c=0;
@@ -735,7 +755,12 @@ public class SimplexAlgorithm extends javax.swing.JFrame {
                     displayFA(matrix);
                     break;
                 }
-                
+                if(mex==matrix){
+                    JOptionPane.showMessageDialog(null, "The tableau is unbounded.");
+                    displayFA(matrix);
+                    break;                  
+                }
+                mex=matrix;
             }
     }
     
